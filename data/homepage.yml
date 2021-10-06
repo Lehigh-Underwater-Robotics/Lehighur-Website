@@ -1,0 +1,14 @@
+# banner
+banner:
+  title : "Hi! We are <br> Lehigh ADUD <br>"
+  subtitle : "To learn, to share, to innovate, to inspire! (Example)"
+
+# about
+about:
+  enable : true
+  content : "Lehigh Underwater Robotics aims to provide students with hands-on experience in the design, building, and testing of underwater drones. We aspire to provide engagement in various interdisciplinary underwater robotics projects that involve software development, mechanical engineering, electrical engineering, and business management . Additionally, Lehigh Underwater Robotics provides community engagement and outreach activities through these projects to inspire the next generation of engineers in underwater robotics. 
+"
+  button:
+    enable : true
+    label : "know more"
+    URL : "members"
