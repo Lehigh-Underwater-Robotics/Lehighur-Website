@@ -1,5 +1,5 @@
 # default configuration
-baseURL = "https://lehigh-adud.vercel.app"
+baseURL = "https://www.lehighur.org"
 languageCode = "en-us"
 summaryLength = "10"
 theme = "kross"
