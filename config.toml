@@ -3,7 +3,7 @@ baseURL = "https://www.lehighur.org"
 languageCode = "en-us"
 summaryLength = "10"
 theme = "kross"
-title = "Lehigh ADUD"
+title = "Lehigh UR"
 
 # css plugins
 [[params.plugins.css]]
@@ -38,10 +38,10 @@ parent = "About Us"
 name = "Our Stories"
 URL = "stories"
 
-[[menu.main]]
-parent = "About Us"
-name = "Our Members"
-URL = "members"
+#[[menu.main]]
+#parent = "About Us"
+#name = "Our Members"
+#URL = "members"
 
 # regular menu
 [[menu.main]]
@@ -51,35 +51,40 @@ hasChildren = true
 
 [[menu.main]]
 parent = "Projects"
-name = "ADUD Summer 2021"
-URL = "adudsummer21"
+name = "Newest"
+URL = "newest"
 
 [[menu.main]]
 parent = "Projects"
-name = "RoboSub 2022"
-URL = "robosub22"
+name = "Summer 2021"
+URL = "summer21"
+
+#[[menu.main]]
+#parent = "Projects"
+#name = "RoboSub 2022"
+#URL = "robosub22"
 
 # regular menu
-[[menu.main]]
-name = "Media"
-weight = 1
-hasChildren = true
+# [[menu.main]]
+# name = "Media"
+# weight = 1
+# hasChildren = true
 
-[[menu.main]]
-parent = "Media"
-name = "Photos"
-URL = "photos"
+#[[menu.main]]
+#parent = "Media"
+#name = "Photos"
+#URL = "photos"
 
-[[menu.main]]
-parent = "Media"
-name = "Videos"
-URL = "videos"
+#[[menu.main]]
+#parent = "Media"
+#name = "Videos"
+#URL = "videos"
 
 # regular menu
-[[menu.main]]
-name = "Reports"
-URL = "reports"
-weight = 1
+# [[menu.main]]
+# name = "Reports"
+# URL = "reports"
+# weight = 1
 
 # regular menu
 [[menu.main]]
@@ -91,7 +96,7 @@ weight = 1
 [[menu.main]]
 name = "Contact Us"
 URL = "contact"
-weight = 1
+weight = 10
 
 # default parameters
 [params]
@@ -100,11 +105,11 @@ logo = ""
 # theme color
 theme_color = "#41228e"
 # contact info
-# phone = "+880 2544 658 256"
-# email = "steve.fruits@email.com"
-address = "125/A, CA Commercial Area, California, USA"
+phone = "N/A"
+email = "inuwrobo@lehigh.edu"
+address = "27 Memorial Dr W, Bethlehem, PA 18015"
 # meta description
-description = "This is meta description"
+description = "Hi! We are Lehigh UR"
 # google analytics
 google_analytics_id = "" # Your ID
 # baidu site verification
@@ -127,7 +132,7 @@ form_action = "#" # contact form works with : https://formspree.io
 
 # google map
 [params.map]
-enable = true
+enable = false
 gmap_api = "https://maps.googleapis.com/maps/api/js?key=&#038;types=(cities)&#038;libraries=places&#038;language=en"
 map_latitude = "51.5223477"
 map_longitude = "-0.1622023"
@@ -139,18 +144,19 @@ enable = true
 expire_days = 2
 
 # social site
-[[params.social]]
-icon = "ti-facebook"
-URL = "#"
+# [[params.social]]
+# icon = "ti-facebook"
+# URL = "#"
 
 [[params.social]]
 icon = "ti-instagram"
-URL = "#"
+URL = "https://www.instagram.com/lehighur/"
 
 [[params.social]]
-icon = "ti-dribbble"
-URL = "#"
+icon = "ti-github"
+URL = "https://github.com/Lehigh-Underwater-Robotics"
 
 [[params.social]]
-icon = "ti-twitter-alt"
-URL = "#"
+icon = "ti-linkedin"
+URL = "https://www.linkedin.com/company/lehigh-underwater-robotics/"
+
