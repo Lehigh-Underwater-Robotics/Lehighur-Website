@@ -1,0 +1,3 @@
+[submodule "themes/kross"]
+	path = themes/kross
+	url = https://github.com/themefisher/kross-hugo.git
