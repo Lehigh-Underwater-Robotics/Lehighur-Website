@@ -12,7 +12,8 @@ link = "plugins/bootstrap/bootstrap.min.css"
 link = "plugins/slick/slick.css"
 [[params.plugins.css]]
 link = "plugins/themify-icons/themify-icons.css"
-
+[[params.plugins.css]]
+link = "style.css"
 
 # js plugin
 [[params.plugins.js]]
