@@ -1,6 +1,6 @@
 # banner
 banner:
-  title : "Hi! We are <br> Lehigh LUR <br>"
+  title : "We are <br> Lehigh Underwater Robotics <br>"
   subtitle : "To learn, to share, to innovate, to inspire!"
 
 # about
@@ -11,4 +11,4 @@ about:
   button:
     enable : true
     label : "know more"
-    URL : "members"
+    URL : "stories"
