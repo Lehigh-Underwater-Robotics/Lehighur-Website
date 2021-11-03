@@ -102,7 +102,7 @@ weight = 10
 # default parameters
 [params]
 home = "Home"
-logo = ""
+logo = "https://i.loli.net/2021/11/04/lhKN2m8zAIdsbPq.png"
 # theme color
 theme_color = "#41228e"
 # contact info
