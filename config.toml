@@ -102,9 +102,9 @@ weight = 10
 # default parameters
 [params]
 home = "Home"
-logo = "https://i.loli.net/2021/11/04/lhKN2m8zAIdsbPq.png"
+logo = "https://i.loli.net/2021/11/05/PIAXLrK3jEvJNmZ.png"
 # theme color
-theme_color = "#41228e"
+theme_color = "#b35900"
 # contact info
 phone = "N/A"
 email = "inuwrobo@lehigh.edu"
