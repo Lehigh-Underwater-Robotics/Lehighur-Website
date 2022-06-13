@@ -65,6 +65,11 @@ URL = "summer21"
 #name = "RoboSub 2022"
 #URL = "robosub22"
 
+[[menu.main]]
+parent = "Projects"
+name = "Technical Design Report"
+URL = "tdr"
+
 # regular menu
 # [[menu.main]]
 # name = "Media"
