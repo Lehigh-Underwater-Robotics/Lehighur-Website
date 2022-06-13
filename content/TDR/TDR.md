@@ -1,38 +1,5 @@
----
-abstract: |
-  The Lehigh University Underwater Robotics Team began work in summer of
-  2021. In our first year of competition, we strive to lay the
-  groundwork for competitions in the future years and research acoustic
-  signal processing, underwater visual simultaneous localization and
-  mapping (SLAM), and a comparative study on multi-channel PWM drivers.
-  Four sub-teams--*mechanical, electrical, software,* and
-  *business*--work together to design and manufacture the autonomous
-  underwater vehicle (AUV), named Osprey, at Lehigh Underwater Robotics.
-  Each team takes on a number of tasks and communicates and collaborates
-  together to produce the final product. The electrical team provides
-  the computer and hardware as well as the power supply that the
-  mechanical team uses for the drone's thrusters and other components.
-  The software team programs the robot to perform the competition tasks
-  autonomously. The business team focuses on documentation and
-  organization of funds.
-author:
-- Mikael Asfaw, Junchen Bao, Heidrun Cobb, Zemichael Gebeyehu, Logan
-  Kramer, Andrew Langenau, Sophia Martino, Junan Mei, Adam Mekay, Daniel
-  O'Keeffe, Hanqing Qi, Layne Raczy, Olivia Reed, Fengyi Sun, Lily
-  Swider, Xinhao Tang, Nathaniel Todd-Long, Heling Wang, Fangzheng Yu,
-  Rosa Zheng
-bibliography:
-- references.bib
-date: June 12, 2022
-title: |
-  Lehigh University RoboSub Technical Design Report\
----
-
-# Competition Strategy
-
-## Team Makeup and workflow
-
-The team is made up of four subteams: *mechanical, electrical, software*
+### Competition Strategy 
+**Team Makeup and workflow:** The team is made up of four subteams: *mechanical, electrical, software*
 and *business*. Each team is responsible for designing certain
 components of the drone and collaborating so that each element fits
 together accurately.
@@ -45,18 +12,18 @@ goal by breaking it up into smaller tasks; they get accomplished on a
 daily or weekly basis, and build upon themselves to accomplish the
 larger goals.
 
-## Software Strategy
+### Software Strategy
 
 The main task of the software sub-team is to build on the work of the
 mechanical and electrical sub-teams and integrate all the results to run
 smoothly. In this process, we use several different methods to
 collaborate and achieve the results we require. These methods include
-training models for image recognition using YOLO [@yolov3], real-time
+training models for image recognition using YOLO, real-time
 image processing, use of models in OpenCV, programming in Python (and
 then using C++ to improve efficiency later), and control of AUVs using
 ROS and MavROS.
 
-## Mechanical Strategy
+### Mechanical Strategy
 
 *Team communication* Due to part of our team being virtual we had to
 find a way to effectively communicate with the whole team. We solved
@@ -69,7 +36,7 @@ component for the chassis we'd come up with multiple viable designs. The
 team would come together to discuss the pros and cons of each design and
 reach a consensus on which solution works the best.
 
-## Electrical Strategy
+### Electrical Strategy
 
 The electrical sub-team has the essential job of supplying our drone
 with power and ensuring that all of the components will be powered and
@@ -80,12 +47,12 @@ the Lehigh Underwater Robotics team will be competing in the RoboSub
 competition, so our first challenge is to design a power distribution
 schematic to supply an adequate amount of power to all of the AUV's
 components. Our electrical team used the BlueROV2, created by
-BlueRobotics [@BlueRobotics], as inspiration to help guide the basis of
+BlueRobotics, as inspiration to help guide the basis of
 our design. There were modifications that our team had to make in order
 to incorporate additional components not found in the BlueROV2 (Pixhawk
 4, NVIDIA jetson, additional cameras, a gripper, etc).
 
-## Business Strategy
+### Business Strategy
 
 The business team works closely with the three other teams to understand
 what their tasks and contributions are. They contribute to compiling the
@@ -93,13 +60,13 @@ documentation in the TDR, the team video, and weekly team update.
 Additionally, our team works with outreach in getting interest from new
 members and potential sponsers.
 
-# Vehicle Design
+### Vehicle Design
 
-## Mechanical
+#### Mechanical
 
 [Mechanical design for underwater drone.]{.image}
 
-### Frame
+#### Frame
 
 Marine grade plastic and carbon fiber nanotube are used for plates and
 connectors, respectively. These materials are lightweight alternatives
@@ -110,7 +77,7 @@ frame was the distribution of weight and buoyant forces. Specifically,
 the battery enclosures are positioned at the bottom of the frame and the
 main enclosure is positioned towards the top of the frame, between the
 two battery enclosures. This detail, as seen in Figure
-[1](#mechdes){reference-type="ref" reference="mechdes"} allows the
+1 allows the
 design to have a stable equilibrium when in the upright position due to
 the net downward force of the batteries and the net upward force of the
 main enclosure while underwater. These forces were calculated using the
@@ -119,7 +86,7 @@ inside.
 
 [Electrical Schematic for underwater drone.]{.image}
 
-### Thrusters
+#### Thrusters
 
 *Positioning:* We wanted to maximize forward and backward movement speed
 while also having the robot remain maneuverable with many degrees of
@@ -137,7 +104,7 @@ the thrusters cause the mounts to lose structural integrity, and the
 thrusters and mounts stick out from the main body of the chassis which
 makes them more fragile.
 
-### Torpedo Launcher
+#### Torpedo Launcher
 
 The goal in designing a torpedo launcher was to keep it as simple as
 possible. Our design relies on one servo with a gear that moves a linear
@@ -150,9 +117,9 @@ energy in the system. When the servo translationally moves the linear
 actuator to one side, the torpedo is released from tension and the
 spring propels it forward into the required space for scoring points.
 
-## Electrical
+### Electrical
 
-### Design Obstacles
+#### Design Obstacles
 
 One of the major design obstacles the electrical team faced was
 installing the entire hardware system inside of a water-tight acrylic
@@ -166,7 +133,7 @@ critical since the selection and wiring of sensors is what will provide
 the software with sufficient data to successfully navigate through the
 tasks.
 
-### Battery
+#### Battery
 
 Our drone is powered by two lithium-ion batteries connected in parallel
 (supplying 14.8V). The electrical team decided to use a low voltage
@@ -175,7 +142,7 @@ to a certain level, to protect the batteries from discharging too much
 and causing permanent damage.
 
 Then, a few UBECs (V-V converter) are implemented to supply the desired
-voltage (5V) to power the Pixhawk 4 [@5980229]. The voltages are
+voltage (5V) to power the Pixhawk 4. The voltages are
 distributed via terminal boards and power the whole system. We are using
 the Pixhawk 4 as our AUV's flight controller. The flight controller
 controls all 8 thrusters, the leak sensor, and the pressure/depth sensor
@@ -185,10 +152,10 @@ obtained from the three cameras connected directly to the Jetson. The
 schematic is seen in Figure [2](#schematic){reference-type="ref"
 reference="schematic"}.
 
-## Software
+### Software
 
-We will mainly use ROS2 [@doi:10.1126/scirobotics.abm6074],
-YOLO [@yolov3], and OpenCV [@opencv_library]. Robot Operating System 2
+We will mainly use ROS2,
+YOLO, and OpenCV. Robot Operating System 2
 (ROS2) is an open-source software development kit for robotics
 applications. Using it can help us save time on integrating different
 robot functions. You Only Look Once (YOLO) is a real-time object
@@ -198,9 +165,9 @@ different tasks. OpenCV is an open-source computer version platform
 library and using it can provide a good way to use the drone in a little
 to no data training situation.
 
-### Image recognition
+#### Image recognition
 
-OpenCV [@opencv_library] is an open-source code, and using it can help
+OpenCV is an open-source code, and using it can help
 reduce a lot of processing power compared to the other machine learning
 platforms, and we can do the edge detection for the gate and help us
 find and locate the position of the gate buoys with ease. The grayscale
@@ -211,17 +178,17 @@ limited data to get a good image recognition result. Therefore we do not
 need to collect tons of data. We can still get a good result by just
 using a small number of pictures collected from the drone.
 
-### Motion Control
+#### Motion Control
 
-MAVLink [@8743355] is a lightweight messaging protocol for communicating
+MAVLink is a lightweight messaging protocol for communicating
 with drones. This provides an easy way to communicate with the different
 parts of the drone and send control signals, with thrusters, the
 battery, and different sensors. MavROS is a ROS package that enables
 MAVLink communication between computers using ROS.
 
-# Experimental Results
+### Experimental Results
 
-## Pool Tests of BlueROV2
+#### Pool Tests of BlueROV2
 
 Testing has been done over the past six months in one of the pools on
 our University's campus. We used the BlueRobotics BlueROV2 for most of
@@ -241,7 +208,7 @@ file using SSH file transfer protocol (SFTP) or secure copy (SCP). This
 video is used for training the model, and the design of the enclosure
 provides the same footage that Osprey would see.
 
-## Bouyancy Testing of Carbon Fiber Frame
+#### Bouyancy Testing of Carbon Fiber Frame
 
 The new design has a different structure than the BlueROV2 we used for
 testing; therefore, it has different balance and buoyancy. We needed to
@@ -250,7 +217,7 @@ did not have an estimate on how it would behave in the pool. So the team
 placed it in a tub to feel how it is balanced and where buoyancy foam or
 weights may need to be placed.
 
-# Acknowledgements {#acknowledgements .unnumbered}
+### Acknowledgements {#acknowledgements .unnumbered}
 
 We would like to thank the people who supported this project over the
 past year. Specifically, we acknowledge Lehigh University's ECE
@@ -261,79 +228,3 @@ guidance.
 We would also like to thank our donors from crowdfunding, who helped
 make our drone possible. Finally we thank Lehigh's Mountaintop Program
 for providing the groundwork and funding on our team project.
-
-::: {.center}
-::: {.tabular}
-p2cm p2cm p3.5cm p2cm p2cm p1cm p2cm *Appendix A* **Component** &
-**Vendor** & **Model/Type** & **Specs** & **Custom/ Purchased** &
-**Cost** & **YOP**
-
-Battery Check (2) & BlueRobotics & BATTERY-CELL-CHECKER-R1 & 2-6s Li-Ion
-Battery & Purchased & \$30 & 2020
-
-Cable Plugs (16) & BlueRobotics & PENETRATOR-BLANK-VP & M10 Threads &
-Purchased & \$64 & 2020
-
-Battery Cables (2) & BlueRobotics & BROV2-CAB-POWER-SET-R1-RP & 5.5mm &
-Purchased & \$136 & 2021
-
-I2C Converter (1) & BlueRobotics & LEVEL CONVERTER-R1-RP & 3.3V &
-Purchased & \$20 & 2020
-
-Watertight Enclosure (1) & BlueRobotics & WTE6-ASM-R1-VP & 6\" Series &
-Purchased & \$337 & 2021
-
-Dual Row Terminal Strip(1) & GUBCUB & GUB-JXDZ & 10.0 A & Purchased &
-\$6.99 & 2021
-
-Voltage Disconnect Module (1) & CZH-LABS & MD-D1021V3 Series & 12V/30A &
-Purchased & \$25 & 2022
-
-Rechargeable Li-Ion Battery (2)
-
-Orange Plastic Sheet (2) & BuyPlastic & PLA-000018-020 & 11.75\" x
-23.75\" & Purchased & \$21.46 & 2022
-
-Dropper Brushless Servo(1) & Traxxas & e-revo Slash T-maxx Summit 3908 &
-6 V & Purchased & \$39.95 & 2021
-
-Camera & ELP Sony & IMX322/323 & 100° FOV & Purchased & \$63.99 & 2022
-
-Camera & ELP Sony & IMX322/323 & 170° FOV & Purchased & \$62.99 & 2022
-
-Plastic Sheet (2) & ePlastics & SEABOARDBLK-0.500TEX54X48 & 1\" X 54\" X
-48\" & Purchased & \$268.26 & 2022
-
-Watertight Enclosure (2) & BlueRobotics & WTE3-P-TUBE-8P75-R1-RP & 3\"
-Series & Purchased & \$262 & 2022
-
-SOS Leak Sensor & BlueRobotics & SOS-SET-R1-RP & 3.3-5V, 20mA &
-Purchased & \$32 & 2021
-:::
-
-::: {.tabular}
-p2.2cm p2cm p3.5cm p2cm p2cm p1cm p2cm **Component** & **Vendor** &
-**Model/Type** & **Specs** & **Custom/ Purchased** & **Cost** & **YOP**
-
-Pressure/Depth Sensor & BlueRobotics & BAR30-SENSOR-R2-RP & 30 Bar
-(300m) & Purchased & \$85.00 & 2021
-
-Ping Sonar & BlueRobotics & PING-SONAR-R3-RP & 30° Beam width, 300m &
-Purchased & \$360 & 2021
-
-Pixhawk 4 & HolyBro & & & Purchased & \$190 & 2020
-
-Thrusters (8) & BlueRobotics & T200-THRUSTER-BROV2-CCW-SPARE-R2-RP & &
-Purchased & \$1,680 & 2020
-
-Nvidia jetson Developer Kit & NVIDEA & Nano & 4GB & Purchased & \$99 &
-2020
-
-ESC(8) & BlueRobotics & BESC30-R3 & 7-26V & Purchased & \$288 & 2022
-
-Circuit Breaker & Bumbesti & HBD-CXFH-15A-2P & 15A & Purchased & \$19.99
-& 2022
-
-Diodes (2) & Onsemi & MBR40250TGOS-ND
-:::
-:::
